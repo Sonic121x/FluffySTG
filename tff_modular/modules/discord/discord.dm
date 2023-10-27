@@ -1,4 +1,4 @@
-//Just a SQL check if valid in row is true. Dont give a user to use null token later.
+/*//Just a SQL check if valid in row is true. Dont give a user to use null token later.
 /datum/controller/subsystem/discord/proc/is_ckey_verified(ckey)
 	var/datum/db_query/query_insert_link_record = SSdbcore.NewQuery(
 		"SELECT * FROM [format_table_name("discord_links")] WHERE ckey = :ckey",
@@ -52,4 +52,4 @@
 		return link.one_time_token
 
 	// Otherwise we make one
-	return SSdiscord.generate_one_time_token(ckey)
+	return SSdiscord.generate_one_time_token(ckey)*/
