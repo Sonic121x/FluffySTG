@@ -1416,3 +1416,100 @@
       longer able to interact with camera consoles.
   projectkepler-ru:
   - image: gave the sindano  proper inhand icon for both variant
+2023-10-29:
+  DrDiasyl:
+  - sound: Dying with a SecHailer on your face will make a unique death sound
+  GPeckman:
+  - bugfix: The health bar on the mech diagnostic hud display should update consistently
+      now.
+  Ghommie:
+  - rscadd: Added a few fish related bounties.
+  - rscadd: Fish cases to store and preserve life fish within can be now printed from
+      the service techfab and the autolathe.
+  GoldenAlpharex:
+  - code_imp: Added support to the wet_floor component to make it so the wet overlay
+      could not be applied to certain turfs if desired.
+  - bugfix: Ice turfs no longer look tiled, and instead look smooth when placed next
+      to one-another.
+  Kyo:
+  - bugfix: Digitigrade sprites for Praetorian modsuit will now work as intended.
+  Kyo, Iajret:
+  - balance: old FF bodyguard MODs now retired, all hail new Skyrat MOD! (bodyguard
+      now available as reskin option for praetorian MOD)
+  - rscadd: Adds a new, unique modsuit for Blueshields - The Praetorian Modsuit!
+  - rscadd: Adds the Praetorian modsuit to blueshield lockers.
+  - code_imp: Added the Praetorian modsuit to list of items removed from cryo, in
+      case a sleepy blueshield forgets to take off their suit.
+  Melbert:
+  - bugfix: People held at gunpoint can now flinch when being hit.
+  - bugfix: Regenerating mobs no longer stop regenerating no matter hit with what.
+  - bugfix: Pressure damage is now properly modified by a mob's brute damage modifier.
+  - bugfix: Fixes some occasions which some effects (glass jaw, explodable worn items)
+      won't respond to hits.
+  - refactor: Refactored core code related to mobs sustaining damage.
+  - bugfix: Disablers and Lasers now show their on-impact effects on hit mobs again.
+  - bugfix: Fixes being unable to open airlocks with telekinesis
+  Nerev4r:
+  - image: The Naga taur option has been replaced with a new sprite, with two Naga
+      variants.
+  - image: A new Drider option, Tarantula, has been added; as well as a new Tentacle
+      option.
+  - image: A new plug tail option, as well as a new set of wings.
+  Paxilmaniac:
+  - code_imp: the deployable component has been tweaked and improved with some new
+      options to it
+  Profakos:
+  - bugfix: Gnomes no longer runtime if they explode while sinking into the ground
+  Xackii:
+  - balance: Sutures now heal a percentage of basic/animal max health instead of a
+      flat amount.
+  Zergspower:
+  - qol: Service Borg reagent mixers alphabetized
+  - bugfix: Fixes the oversight that prevented RP borgs from being able to use the
+      Hilbert Hotel ball in the Cafe
+  necromanceranne:
+  - bugfix: Every person on the station now no longer has the Tranquility Evades the
+      Shield Pinky Finger Shovegrab unarmed combat technique, an ancient and forbidden
+      strike that allows anyone (literally anyone) to bypass all forms of blocking
+      defense by simply not being in combat mode when they shove or grab their target.
+      As a direct result, the chakra energy of the Spinward Sector has become severely
+      misaligned. Oh well.
+  unit0016:
+  - bugfix: Every misaligned railing ending has been corrected by the Nanotrasen Hall
+      Monitor's Lunchclub.
+2023-10-30:
+  GPeckman:
+  - bugfix: Light-Eaten objects can no longer emit light after being turned off and
+      then back on.
+  - code_imp: Flashlights now use light_on instead of defining their own variable.
+      Please report buggy behavior.
+  - bugfix: Removed rare hard delete involving telecomms machines.
+  LT3:
+  - bugfix: Blueshift now has PDA charging microwaves available similar to other maps
+  jlsnow301:
+  - bugfix: Fixed an invisibility exploit on large mobs. Probably better this way
+2023-10-31:
+  CRITAWAKETS:
+  - rscadd: Corn oil is now produced from corn instead of regular vegetable oil.
+  - balance: Glycerol now uses corn oil instead of vegetable oil in it's recipe.
+  - bugfix: Grinding corn now produces oil when it previously only made cornmeal despite
+      having oil in it's reagents.
+  Data_:
+  - bugfix: The detective's curtains can be closed again in Birdshot.
+  Jackraxxus:
+  - bugfix: Obsessed's moodlets (Both positive and negative) go away when the trauma
+      is cured or the antag status is removed.
+  Mothblocks:
+  - spellcheck: Changed candy description to read better
+  Toastgoats:
+  - rscadd: The Ethereal Vintner's Union has been "convinced" to trade their signature
+      Lanternfruit with Nanotrasen!
+  - image: Sprites for the aforementioned fruit.
+  honkpocket:
+  - bugfix: Removes the dixel from the new medium and long skirts
+  - code_imp: Changes the syndicate neck gaiter to not have sec-hailer sfx and TTS
+      filtering
+  san7890:
+  - bugfix: Bitrunners can no longer get mass-mindswapped out of their avatar when
+      the wizard does the event. Something about machinery and magic not going well
+      together.
