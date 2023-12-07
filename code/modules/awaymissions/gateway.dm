@@ -31,7 +31,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 **/
 // Just a reminder that the home gateway overrides this proc so if a borg someone finds themself in an away mission they can still leave
 /datum/gateway_destination/proc/incoming_pass_check(atom/movable/AM)
-	return !iscyborg(AM)
+	return TRUE
 // SKYRAT EDIT - END
 /* Get the actual turf we'll arrive at */
 /datum/gateway_destination/proc/get_target_turf()
