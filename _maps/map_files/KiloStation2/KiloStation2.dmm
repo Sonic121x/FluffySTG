@@ -4301,7 +4301,7 @@
 /area/station/engineering/atmos)
 "buJ" = (
 /obj/structure/bed/dogbed/runtime,
-/mob/living/simple_animal/pet/cat/runtime,
+/mob/living/basic/pet/cat/runtime,
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/cmo)
@@ -4438,7 +4438,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/camera/directional/west{
-	c_tag = "Engineering West"
+	c_tag = "Bitrunning Den"
 	},
 /obj/structure/cable,
 /turf/open/floor/catwalk_floor,
@@ -9042,7 +9042,7 @@
 /area/station/hallway/secondary/exit/departure_lounge)
 "cYZ" = (
 /obj/effect/spawner/random/structure/furniture_parts,
-/obj/effect/spawner/random/structure/crate_empty,
+/obj/effect/spawner/random/structure/closet_empty/crate,
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/department/crew_quarters/bar)
@@ -36030,7 +36030,7 @@
 "lxU" = (
 /obj/effect/turf_decal/bot,
 /obj/item/storage/box/lights/mixed,
-/obj/effect/spawner/random/structure/crate_empty,
+/obj/effect/spawner/random/structure/closet_empty/crate,
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "lyb" = (
@@ -60934,7 +60934,7 @@
 /area/station/hallway/primary/aft)
 "tCd" = (
 /obj/effect/landmark/event_spawn,
-/mob/living/simple_animal/bot/medbot/autopatrol,
+/mob/living/basic/bot/medbot/autopatrol,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/turf_decal/tile/blue/opposingcorners,
@@ -63836,9 +63836,9 @@
 /turf/open/floor/iron/dark,
 /area/station/hallway/primary/central/fore)
 "uwV" = (
-/obj/structure/closet/secure_closet/nanotrasen_consultant/station,
 /obj/item/assembly/flash/handheld,
 /obj/machinery/status_display/ai/directional/north,
+/obj/structure/closet/secure_closet/nanotrasen_consultant,
 /turf/open/floor/carpet/executive,
 /area/station/command/heads_quarters/nt_rep)
 "uwX" = (

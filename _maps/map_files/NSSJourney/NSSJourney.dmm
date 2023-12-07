@@ -8384,7 +8384,6 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/port)
 "aMU" = (
-/obj/structure/disposalpipe/segment,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
 	dir = 4
@@ -39438,8 +39437,8 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/structure/closet/secure_closet/nanotrasen_consultant/station,
 /obj/item/clothing/under/rank/centcom/intern,
+/obj/structure/closet/secure_closet/nanotrasen_consultant,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/nt_rep)
 "hZK" = (
@@ -53046,7 +53045,7 @@
 /area/station/security/prison)
 "sHZ" = (
 /obj/effect/turf_decal/box,
-/obj/structure/closet/crate/maint,
+/obj/effect/spawner/random/structure/closet_empty/crate/with_loot,
 /obj/effect/spawner/random/maintenance/six,
 /obj/structure/sign/poster/official/wtf_is_co2/directional/north,
 /turf/open/floor/iron/dark,
@@ -54325,7 +54324,7 @@
 /area/station/science/breakroom)
 "tJO" = (
 /obj/structure/bed/dogbed/runtime,
-/mob/living/simple_animal/pet/cat/runtime,
+/mob/living/basic/pet/cat/runtime,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/cmo)
 "tJW" = (
