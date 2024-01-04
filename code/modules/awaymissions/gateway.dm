@@ -31,7 +31,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 **/
 // Just a reminder that the home gateway overrides this proc so if a borg someone finds themself in an away mission they can still leave
 /datum/gateway_destination/proc/incoming_pass_check(atom/movable/AM)
-	return !iscyborg(AM)
+	return TRUE
 // NOVA EDIT - END
 /* Get the actual turf we'll arrive at */
 /datum/gateway_destination/proc/get_target_turf()
@@ -138,6 +138,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	invisibility = INVISIBILITY_ABSTRACT
 
 /obj/effect/gateway_portal_bumper/Bumped(atom/movable/AM)
+/*
 	//NOVA EDIT ADDITION
 	var/list/type_blacklist = list(
 		/obj/item/mmi,
@@ -151,6 +152,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 		to_chat(AM, span_warning("[content_item] seems to be blocking you from entering the gateway!"))
 		return
 	//NOVA EDIT END
+*/
 	if(get_dir(src,AM) == SOUTH)
 		gateway.Transfer(AM)
 
@@ -348,6 +350,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 
 /obj/machinery/gateway/away/interact(mob/user, special_state)
 	. = ..()
+/*
 	//NOVA EDIT ADDITION
 	var/list/type_blacklist = list(
 		/obj/item/mmi,
@@ -362,6 +365,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 		to_chat(user, span_warning("[content_item] seems to be blocking you from entering the gateway!"))
 		return
 	//NOVA EDIT END
+*/
 	if(!target)
 		if(!GLOB.the_gateway)
 			to_chat(user,span_warning("Home gateway is not responding!"))
@@ -375,7 +379,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 /obj/machinery/computer/gateway_control
 	name = "Gateway Control"
 	desc = "Human friendly interface to the mysterious gate next to it."
-	req_access = list(ACCESS_CENT_GENERAL) //NOVA EDIT ADDITION
+	//req_access = list(ACCESS_CENT_GENERAL) //NOVA EDIT ADDITION
 	var/obj/machinery/gateway/G
 
 /obj/machinery/computer/gateway_control/Initialize(mapload, obj/item/circuitboard/C)
