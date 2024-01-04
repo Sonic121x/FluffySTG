@@ -463,10 +463,11 @@
 			update()
 		if("emergency_lighting")
 			emergency_lights = !emergency_lights
-			for(var/obj/machinery/light/L in area)
-				if(!initial(L.no_low_power)) //If there was an override set on creation, keep that override
-					L.no_low_power = emergency_lights
-					INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light/, update), FALSE)
+			for(var/turf/area_turf as anything in area.get_contained_turfs())
+				for(var/obj/machinery/light/area_light in area_turf)
+					if(!initial(area_light.no_low_power)) //If there was an override set on creation, keep that override
+						area_light.no_low_power = emergency_lights
+						INVOKE_ASYNC(area_light, TYPE_PROC_REF(/obj/machinery/light/, update), FALSE)
 				CHECK_TICK
 	return TRUE
 
@@ -561,7 +562,7 @@
 			if(!nightshift_lights || (nightshift_lights && !low_power_nightshift_lights))
 				low_power_nightshift_lights = TRUE
 				INVOKE_ASYNC(src, PROC_REF(set_nightshift), TRUE)
-		else if(cell.percent() < 7 && long_term_power < 0) // SKYRAT EDIT CHANGE - orig: 15
+		else if(cell.percent() < 7 && long_term_power < 0) // NOVA EDIT CHANGE - orig: 15
 			equipment = autoset(equipment, AUTOSET_OFF)
 			lighting = autoset(lighting, AUTOSET_OFF)
 			environ = autoset(environ, AUTOSET_ON)
@@ -569,9 +570,9 @@
 			if(!nightshift_lights || (nightshift_lights && !low_power_nightshift_lights))
 				low_power_nightshift_lights = TRUE
 				INVOKE_ASYNC(src, PROC_REF(set_nightshift), TRUE)
-		else if(cell.percent() < 17 && long_term_power < 0) // SKYRAT EDIT CHANGE - orig: 30
-			equipment = autoset(equipment, AUTOSET_ON) // SKYRAT EDIT CHANGE - orig: AUTOSET_OFF
-			lighting = autoset(lighting, AUTOSET_OFF) // SKYRAT EDIT CHANGE - orig: AUTOSET_ON
+		else if(cell.percent() < 17 && long_term_power < 0) // NOVA EDIT CHANGE - orig: 30
+			equipment = autoset(equipment, AUTOSET_ON) // NOVA EDIT CHANGE - orig: AUTOSET_OFF
+			lighting = autoset(lighting, AUTOSET_OFF) // NOVA EDIT CHANGE - orig: AUTOSET_ON
 			environ = autoset(environ, AUTOSET_ON)
 			alarm_manager.send_alarm(ALARM_POWER)
 			if(!nightshift_lights || (nightshift_lights && !low_power_nightshift_lights))
@@ -677,10 +678,11 @@
 		INVOKE_ASYNC(src, PROC_REF(break_lights))
 
 /obj/machinery/power/apc/proc/break_lights()
-	for(var/obj/machinery/light/breaked_light in area)
-		breaked_light.on = TRUE
-		breaked_light.break_light_tube()
-		stoplag()
+	for(var/turf/area_turf as anything in area.get_contained_turfs())
+		for(var/obj/machinery/light/breaked_light in area_turf)
+			breaked_light.on = TRUE
+			breaked_light.break_light_tube()
+			stoplag()
 
 /obj/machinery/power/apc/should_atmos_process(datum/gas_mixture/air, exposed_temperature)
 	return (exposed_temperature > 2000)

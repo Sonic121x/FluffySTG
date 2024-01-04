@@ -135,7 +135,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 
 	var/list/empty_turfs = list()
 	for(var/area/shuttle/shuttle_area as anything in shuttle_areas)
-		for(var/turf/open/floor/shuttle_turf in shuttle_area)
+		for(var/turf/open/floor/shuttle_turf in shuttle_area.get_contained_turfs())
 			if(shuttle_turf.is_blocked_turf())
 				continue
 			empty_turfs += shuttle_turf
@@ -161,7 +161,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	var/pack_cost
 	var/list/goodies_by_buyer = list() // if someone orders more than GOODY_FREE_SHIPPING_MAX goodies, we upcharge to a normal crate so they can't carry around 20 combat shotties
 	var/list/clean_up_orders = list() // orders to remove since we are done with them
-	var/list/forced_briefcases = list() // SKYRAT EDIT ADDITION
+	var/list/forced_briefcases = list() // NOVA EDIT ADDITION
 
 	for(var/datum/supply_order/spawning_order in SSshuttle.shopping_list)
 		if(!empty_turfs.len)
@@ -192,7 +192,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 					continue
 
 		pack_cost = spawning_order.pack.get_cost()
-		if(spawning_order.paying_account && spawning_order.charge_on_purchase) // SKYRAT EDIT CHANGE - ORIGINAL: if(spawning_order.paying_account)
+		if(spawning_order.paying_account && spawning_order.charge_on_purchase) // NOVA EDIT CHANGE - ORIGINAL: if(spawning_order.paying_account)
 			paying_for_this = spawning_order.paying_account
 			if(spawning_order.pack.goody)
 				LAZYADD(goodies_by_buyer[spawning_order.paying_account], spawning_order)
@@ -205,7 +205,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 			cargo.adjust_money(price - pack_cost) //Cargo gets the handling fee
 		value += pack_cost
 
-		if(!spawning_order.pack.goody && !(spawning_order?.paying_account in forced_briefcases)) // SKYRAT EDIT CHANGE - ORIGINAL : if(!spawning_order.pack.goody)
+		if(!spawning_order.pack.goody && !(spawning_order?.paying_account in forced_briefcases)) // NOVA EDIT CHANGE - ORIGINAL : if(!spawning_order.pack.goody)
 			var/obj/structure/closet/crate = spawning_order.generate(pick_n_take(empty_turfs))
 			crate.name += " - #[spawning_order.id]"
 
@@ -232,22 +232,22 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 		if(buying_account_orders.len > GOODY_FREE_SHIPPING_MAX) // no free shipping, send a crate
 			var/obj/structure/closet/crate/secure/owned/our_crate = new /obj/structure/closet/crate/secure/owned(pick_n_take(empty_turfs))
 			our_crate.buyer_account = buying_account
-			/// SKYRAT EDIT ADDITION START - FIXES COMMAND BUDGET CASES BEING UNOPENABLE
+			/// NOVA EDIT ADDITION START - FIXES COMMAND BUDGET CASES BEING UNOPENABLE
 			if(istype(our_crate.buyer_account, /datum/bank_account/department))
 				our_crate.department_purchase = TRUE
 				our_crate.department_account = our_crate.buyer_account
-			/// SKYRAT EDIT ADDITION END
+			/// NOVA EDIT ADDITION END
 			our_crate.name = "goody crate - purchased by [buyer]"
 			miscboxes[buyer] = our_crate
 		else //free shipping in a case
 			miscboxes[buyer] = new /obj/item/storage/lockbox/order(pick_n_take(empty_turfs))
 			var/obj/item/storage/lockbox/order/our_case = miscboxes[buyer]
 			our_case.buyer_account = buying_account
-			/// SKYRAT EDIT ADDITION START - FIXES COMMAND BUDGET CASES BEING UNOPENABLE
+			/// NOVA EDIT ADDITION START - FIXES COMMAND BUDGET CASES BEING UNOPENABLE
 			if(istype(our_case.buyer_account, /datum/bank_account/department))
 				our_case.department_purchase = TRUE
 				our_case.department_account = our_case.buyer_account
-			/// SKYRAT EDIT ADDITION END
+			/// NOVA EDIT ADDITION END
 			miscboxes[buyer].name = "goody case - purchased by [buyer]"
 		misc_contents[buyer] = list()
 
@@ -283,12 +283,13 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	var/datum/export_report/report = new
 
 	for(var/area/shuttle/shuttle_area as anything in shuttle_areas)
-		for(var/atom/movable/exporting_atom in shuttle_area)
-			if(iscameramob(exporting_atom))
-				continue
-			if(exporting_atom.anchored)
-				continue
-			export_item_and_contents(exporting_atom, apply_elastic = TRUE, dry_run = FALSE, external_report = report)
+		for(var/turf/shuttle_turf as anything in shuttle_area.get_contained_turfs())
+			for(var/atom/movable/exporting_atom in shuttle_turf)
+				if(iscameramob(exporting_atom))
+					continue
+				if(exporting_atom.anchored)
+					continue
+				export_item_and_contents(exporting_atom, apply_elastic = TRUE, dry_run = FALSE, external_report = report)
 
 	if(report.exported_atoms)
 		report.exported_atoms += "." //ugh
@@ -316,9 +317,8 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 
 	//spawn crate
 	var/list/empty_turfs = list()
-	for(var/place as anything in shuttle_areas)
-		var/area/shuttle/shuttle_area = place
-		for(var/turf/open/floor/shuttle_floor in shuttle_area)
+	for(var/area/shuttle/shuttle_area as anything in shuttle_areas)
+		for(var/turf/open/floor/shuttle_floor in shuttle_area.get_contained_turfs())
 			if(shuttle_floor.is_blocked_turf())
 				continue
 			empty_turfs += shuttle_floor
