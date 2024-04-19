@@ -40,7 +40,10 @@
 	one_use = TRUE
 
 /obj/item/borg/upgrade/rename/attack_self(mob/user)
-	heldname = sanitize_name(tgui_input_text(user, "Enter new robot name", "Cyborg Reclassification", heldname, MAX_NAME_LEN), allow_numbers = TRUE)
+	var/new_heldname = sanitize_name(tgui_input_text(user, "Enter new robot name", "Cyborg Reclassification", heldname, MAX_NAME_LEN), allow_numbers = TRUE)
+	if(!new_heldname || !user.is_holding(src))
+		return
+	heldname = new_heldname
 	user.log_message("set \"[heldname]\" as a name in a cyborg reclassification board at [loc_name(user)]", LOG_GAME)
 
 /obj/item/borg/upgrade/rename/action(mob/living/silicon/robot/R, user = usr)
@@ -552,14 +555,12 @@
 		to_chat(usr, span_warning("This unit already has an expand module installed!"))
 		return FALSE
 	// NOVA EDIT BEGIN
-	if(robot.model.model_select_icon == "nomod")
-		to_chat(usr, span_warning("Default models cannot take expand or shrink upgrades."))
-		return FALSE
-	if((TRAIT_R_WIDE in robot.model.model_features) || (TRAIT_R_TALL in robot.model.model_features))
-		to_chat(usr, span_warning("This unit's chassis cannot be enlarged any further."))
-		return FALSE
+	var/resize_amount = 1.25
+	if(TRAIT_R_WIDE in robot.model.model_features)
+		resize_amount = 1.25
+	if(TRAIT_R_TALL in robot.model.model_features)
+		resize_amount = 1.05
 	// NOVA EDIT END
-
 	ADD_TRAIT(robot, TRAIT_NO_TRANSFORM, REF(src))
 	var/prev_lockcharge = robot.lockcharge
 	robot.SetLockdown(TRUE)
@@ -576,7 +577,7 @@
 	robot.set_anchored(FALSE)
 	REMOVE_TRAIT(robot, TRAIT_NO_TRANSFORM, REF(src))
 	robot.hasExpanded = TRUE
-	robot.update_transform(1.5) // NOVA EDIT CHANGE - ORIGINAL: robot.update_transform(2)
+	robot.update_transform(resize_amount) // NOVA EDIT CHANGE - ORIGINAL: robot.update_transform(2)
 
 /obj/item/borg/upgrade/expand/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
