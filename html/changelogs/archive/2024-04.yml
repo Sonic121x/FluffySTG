@@ -735,3 +735,133 @@
   san7890:
   - rscadd: Regal Rats are now able to tear down those colorful posters those weird
       grey creatures keep spackling up on the walls of their rightful domain.
+2024-04-19:
+  Ben10Omintrix:
+  - qol: slimes will stay active without needing any one to watch over
+  Bmon:
+  - bugfix: Fixed on-mob sprite alightment for the NT SWAT helmet.
+  FlufflesTheDog:
+  - rscadd: large mortars can now mix, like blenders can
+  - qol: large mortars should have better feedback and usability
+  - bugfix: stone stoves no longer give you free pots
+  - rscadd: you can now smith pots using four iron plates
+  - bugfix: smithing iron rods won't randomly short-change you
+  - bugfix: wood racks no longer drop iron rack parts
+  - bugfix: millstones no longer drop "sheet" when deconstructed
+  - bugfix: Clocking out will now open up your job slot for new players to take. Should
+      the role become filled in your absence, you will not be able to clock back in
+      until someone clocks out or cryos.
+  Iajret:
+  - bugfix: cooling and anti-disruption RCD upgrades can now be printed in ancient
+      protolathes
+  Jacquerel:
+  - balance: Gulag mining has been rebalanced so that every boulder is worth the same
+      amount of points to mine for a prisoner regardless of what it contains, and
+      should be more consistent.
+  - rscadd: A vent which boulders can be hauled out of by hand has been added to the
+      gulag which you can use if there's nothing left to mine. It is very slow, but
+      at least it gives you a workout...
+  JimKil3:
+  - rscadd: Forged daggers now act as knives
+  - rscadd: Forged tools are now slightly faster than default
+  - code_imp: "Forging-related tools now use the toolspeed var normally\n/\U0001F191"
+  LT3:
+  - bugfix: Medical crew monitor works again
+  Melbert:
+  - refactor: Atom-Item interactions have been refactored once more. Report any oddities.
+  - bugfix: Primal Instincts and Living Flesh should be a tad more reactive
+  - bugfix: You can handcuff people with 2 arms and you can no longer handcuff people
+      with 0 arms
+  SomeRandomOwl:
+  - bugfix: Interdyne pharmaceuticals remembered to ship a starter kit and the recipe
+      for sanysfentynal to their base on the ice moon
+  SyncIt21:
+  - bugfix: smart pipes release their gases into the air when unwrenched
+  - bugfix: cryo pipe connector component has no side effects of gas reallocation
+      when deleted
+  TheRyeGuyWhoWillNowDie:
+  - bugfix: being revived with a cyber-heart now properly restarts the cyber heart
+  ZephyrTFA:
+  - admin: Controller Overview UI. Check the Server Tab.
+  Zergspower:
+  - code_imp: removed the faction defines for Black Mesa as they dont exist anymore
+  - balance: DS2 and Interdyne factions are properly assigned, syndicate ruins will
+      not retaliate
+  - qol: DS2 general crew can now open the shutters to go to the docking area as well
+      as unbolt the vault for turret control
+  jlsnow301:
+  - bugfix: TGUI Alerts shouldn't have such wonky buttons any more
+  - bugfix: Fixed a bluescreen in cargo console
+  - bugfix: 'Lootpanel additions: Condensed item names for the quick of draw'
+  nikothedude:
+  - bugfix: Clothing with taur-specific clothing sprites now render those sprites
+      properly
+  san7890:
+  - qol: There's a bit more user feedback when it comes to attempting to handcuff
+      someone.
+  starrm4nn:
+  - qol: Replaced the surgical tools in the Primary Surgery Theatre with 2 Surgery
+      Trays.
+2024-04-20:
+  Iamgoofball:
+  - bugfix: Carps migrating through the station no longer idle so they don't get stuck
+      after spawning until someone walks by.
+  LT3:
+  - balance: Increased tesla coil zap conversion capacity
+  Motho:
+  - rscadd: Added wizard-themed deathmatch map.
+  - rscadd: Added mystery wand box.
+  Rhials:
+  - qol: Water tiles now extinguish fires on items and people.
+  Sightld2:
+  - bugfix: Ants are no longer picky eaters. Low Purity sugar will no longer result
+      in less Ants than you started with.
+  SyncIt21:
+  - code_imp: most cell power usages are scaled with defined constants to help adapt
+      to future changes
+  - bugfix: plumbing machinery begins processing only when wrenched & ends when unwrenched
+  - bugfix: plumbing machinery uses energy only when wrenched & doing work, will stop/use
+      less energy when idle
+  - bugfix: plumbing grinder chemical will grinds & juice stuff correctly i.e. prefer
+      grinding over juicing for most stuff
+  Vishenka0704:
+  - qol: added mass craft for personal crafting
+  ZephyrTFA:
+  - admin: Player Panel is back
+  - admin: New dropdown to force change a mob's name and the attached client's preferences.
+  iliyaxox:
+  - spellcheck: '''inisimin'' verb corrected to ''invisimin'''
+  jlsnow301:
+  - rscadd: The lootpanel now works at range.
+  - rscadd: Screentips for reskinnable items.
+  - bugfix: Alt click interactions have been refactored, which may lead to unintentional
+      changes to gameplay. Report any issues, please.
+  - bugfix: Mecha pilots are no longer bothered by incessant loot panels while holding
+      ALT for strafe disable.
+  vinylspiders:
+  - bugfix: fixes the preference menu bluescreen
+2024-04-21:
+  Melbert:
+  - bugfix: You can open bags with alt click while resting again
+  - qol: Many items which previously required you to stand to alt-click now don't,
+      such as bedsheets and spray cans
+  Rhials:
+  - qol: Lava and plasma rivers now immerse you in them.
+  SyncIt21:
+  - bugfix: pseudo circuit adapter computes recharge delay durations correctly & won't
+      use power when on cooldown
+  - code_imp: uses standard cell defines for N-spect scanner
+  Zergspower:
+  - qol: Adjusted loot for Syndie Outpost to reflect the challenge
+  - qol: gives the BMD a Qpad board since they cant print one
+  - balance: Pirate Fort and Syndie Outpost ruins cant be cheesed anymore
+  - bugfix: fixed an AT on Blackmarket
+  jlsnow301:
+  - bugfix: Fixes the sight range on lootpanel.
+  - bugfix: Dropdowns received some much-needed QoL, like having the scrollbar follow
+      your selection.
+  - bugfix: AI voice changer now shows its current voice selection.
+  - bugfix: Deathmatch screen has been touched up.
+  - bugfix: Prefs menu has their dropdowns simplified, hopefully fixing issues
+  - bugfix: Fixed the targeting capability of mobs with full auto
+  - bugfix: You can now fire the marksman revolver at things you can see
