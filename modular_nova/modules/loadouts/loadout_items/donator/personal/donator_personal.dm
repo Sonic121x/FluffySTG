@@ -11,16 +11,42 @@
 /datum/loadout_item/pocket_items/drawingtablet
 	name = "Drawing Tablet"
 	item_path = /obj/item/canvas/drawingtablet
+	donator_only = TRUE
+
+/datum/loadout_item/under/jumpsuit/paddedunder
+	name = "Feathered Serenity Suit"
+	item_path = /obj/item/clothing/under/padded
 	ckeywhitelist = list("thedragmeme")
 
-/datum/loadout_item/suit/furcoat
-	name = "Leather coat with fur"
-	item_path = /obj/item/clothing/suit/furcoat
+/datum/loadout_item/under/jumpsuit/paddedunder/alt
+	name = "Feathered Serenity Suit"
+	item_path = /obj/item/clothing/under/padded/alt
+	ckeywhitelist = list("snailomi")
+
+/datum/loadout_item/neck/padded
+	name = "Feathered Serenity Cloak"
+	item_path = /obj/item/clothing/neck/padded
 	ckeywhitelist = list("thedragmeme")
 
-/datum/loadout_item/under/jumpsuit/black_turtleneck
-	name = "Black turtleneck"
-	item_path = /obj/item/clothing/under/syndicate/tacticool/black
+/datum/loadout_item/neck/padded/alt
+	name = "Feathered Serenity Cloak"
+	item_path = /obj/item/clothing/neck/padded/alt
+	ckeywhitelist = list("snailomi")
+
+/datum/loadout_item/neck/padded/alt
+	name = "Feathered Serenity Cloak"
+	item_path = /obj/item/clothing/neck/padded/alt
+	ckeywhitelist = list("thedragmeme")
+
+
+/datum/loadout_item/gloves/padded
+	name = "Serenity Gloves"
+	item_path = /obj/item/clothing/gloves/padded
+	ckeywhitelist = list("thedragmeme", "snailomi")
+
+/datum/loadout_item/shoes/padded
+	name = "Serenity Boots"
+	item_path = /obj/item/clothing/shoes/jackboots/padded
 	ckeywhitelist = list("thedragmeme")
 
 /datum/loadout_item/under/jumpsuit/long_skirtleneck
@@ -597,7 +623,7 @@
 /datum/loadout_item/shoes/dragheels
 	name = "Fancy Heels (dragmeme)"
 	item_path = /obj/item/clothing/shoes/fancy_heels/drag
-	ckeywhitelist = list("thedragmeme")
+	ckeywhitelist = list("thedragmeme", "snailomi")
 
 /datum/loadout_item/under/jumpsuit/bimpcap
 	name = "Formal Matte Black Captain Uniform"
@@ -652,20 +678,6 @@
 	item_path = /obj/item/clothing/glasses/gold_aviators
 	ckeywhitelist = list("nikohyena")
 
-/datum/loadout_item/under/jumpsuit/caged_dress
-	name = "Caged Purple Dress"
-	item_path = /obj/item/clothing/under/caged_dress
-	ckeywhitelist = list("thedragmeme")
-
-/datum/loadout_item/suit/shortcoat
-	name = "Short Purple Coat"
-	item_path = /obj/item/clothing/suit/short_coat
-	ckeywhitelist = list("thedragmeme")
-
-/datum/loadout_item/neck/flowercollar
-	name = "Flower Collar"
-	item_path = /obj/item/clothing/neck/flower_collar
-	ckeywhitelist = list("thedragmeme")
 
 /datum/loadout_item/under/jumpsuit/goldenkimono
 	name = "Short-Sleeved Kimono"
