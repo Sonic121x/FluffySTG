@@ -1,3 +1,4 @@
+/*
 /obj/item/clothing/suit/jacket/tailcoat //parent type
 	name = "tailcoat"
 	desc = "A coat usually worn by bunny themed waiters and the like."
@@ -378,3 +379,4 @@
 	name = "centcom tailcoat"
 	desc = "A reinforced tailcoat worn by bunny themed centcom officers."
 	icon_state = "tailcoat_centcom"
+*/
