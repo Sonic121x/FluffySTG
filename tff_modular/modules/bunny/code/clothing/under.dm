@@ -1,3 +1,4 @@
+/*
 /obj/item/clothing/under/costume/playbunny
 	name = "bunny suit"
 	desc = "The staple of any bunny themed waiters and the like. It has a little cottonball tail too."
@@ -706,3 +707,4 @@
 	. = ..()
 
 	create_storage(storage_type = /datum/storage/pockets/tiny)
+*/
