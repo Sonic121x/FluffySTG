@@ -4,6 +4,12 @@
 	greyscale_colors = "#316E4A"
 	flags_1 = null
 
+/obj/item/clothing/shoes/fancy_heels/fakesyndi
+	name = "syndiheels"
+	desc = "Heel in more way than one."
+	greyscale_colors = "#18191E"
+	flags_1 = null
+
 /obj/item/clothing/shoes/fancy_heels/syndi
 	name = "syndiheels"
 	desc = "Heel in more way than one."
