@@ -2,6 +2,7 @@
 	FLUFFY FRONTIER: BUNNY SUIT PORT
 	Sprites by DimWhat (MONKE STATION)
 */
+/*
 /obj/item/clothing/head/playbunnyears
 	name = "bunny ears headband"
 	desc = "A pair of bunny ears attached to a headband. One of the ears is already crooked."
@@ -286,3 +287,4 @@
 	name = "psychologist's bunny ears"
 	desc = "A pair of black bunny ears. And how do they make you feel?"
 	icon_state = "psychologist"
+*/
