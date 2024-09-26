@@ -1,4 +1,3 @@
-/*
 /obj/item/clothing/neck/bunny
 	var/tie_type = "tie_greyscale"
 	var/tie_timer = 8 SECONDS
@@ -301,4 +300,3 @@
 	icon_state = "tie_collar_lawyer_good_tied"
 	flags_1 = null
 	tie_type = "tie_collar_lawyer_good"
-*/
