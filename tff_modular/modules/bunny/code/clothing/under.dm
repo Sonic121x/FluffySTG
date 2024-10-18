@@ -1,3 +1,4 @@
+/*
 /obj/item/clothing/under/costume/playbunny
 	name = "bunny suit"
 	desc = "The staple of any bunny themed waiters and the like. It has a little cottonball tail too."
@@ -534,3 +535,4 @@
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
+*/
