@@ -1,4 +1,4 @@
-/datum/armament_entry/company_import/nri_surplus/clothing/space_suit
+/*/datum/armament_entry/company_import/nri_surplus/clothing/space_suit
 	restricted = TRUE
 
 /datum/armament_entry/company_import/nri_surplus/clothing/space_helmet
@@ -17,5 +17,5 @@
 	contraband = TRUE
 
 /datum/armament_entry/company_import/nri_surplus/firearm_ammo/amr_magazine
-	contraband = TRUE
+	contraband = TRUE*/
 
