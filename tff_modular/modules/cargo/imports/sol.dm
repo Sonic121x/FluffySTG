@@ -1,4 +1,4 @@
-/datum/armament_entry/company_import/sol_defense/armor
+/*/datum/armament_entry/company_import/sol_defense/armor
 	restricted = TRUE
 
 /datum/armament_entry/company_import/sol_defense/armor_hardened
@@ -21,4 +21,4 @@
 	contraband = TRUE
 
 /datum/armament_entry/company_import/sol_defense/magazines/sol_grenade_drum
-	contraband = TRUE
+	contraband = TRUE*/
