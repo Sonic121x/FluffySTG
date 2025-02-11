@@ -1,4 +1,4 @@
-/datum/armament_entry/company_import/nakamura_modsuits/plating/security
+/*/datum/armament_entry/company_import/nakamura_modsuits/plating/security
 	restricted = TRUE
 
 /datum/armament_entry/company_import/nakamura_modsuits/protection_modules/armor_plates
@@ -12,4 +12,4 @@
 	contraband = TRUE
 
 /datum/armament_entry/company_import/nakamura_modsuits/novelty_modules/rave
-	contraband = TRUE
+	contraband = TRUE*/
