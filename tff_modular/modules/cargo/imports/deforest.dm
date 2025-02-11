@@ -1,4 +1,4 @@
-/datum/armament_entry/company_import/deforest/medpens/pentibinin
+/*/datum/armament_entry/company_import/deforest/medpens/pentibinin
 	contraband = TRUE
 
 /datum/armament_entry/company_import/deforest/medpens_stim/aranepaine
@@ -11,4 +11,4 @@
 	contraband = TRUE
 
 /datum/armament_entry/company_import/deforest/medpens_stim/demoneye
-	contraband = TRUE
+	contraband = TRUE*/
